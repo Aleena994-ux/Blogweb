@@ -30,7 +30,7 @@ const Blog = () => {
       b.category.toLowerCase().includes(search.toLowerCase())
   );
 
-  // About section features
+
   const features = [
     { icon: <FaPenFancy size={30} />, title: "Write Blogs", desc: "Easily create and publish your own blogs." },
     { icon: <FaSearch size={30} />, title: "Search Blogs", desc: "Find blogs by title or category quickly." },
@@ -59,13 +59,13 @@ const Blog = () => {
         }}
       />
 
-      {/* About Section */}
+      {/* About */}
       <Box sx={{ mb: 5 }}>
         <Typography
           variant="h5"
           sx={{ fontWeight: "bold", mb: 3, mt: 8, textAlign: "center", color: "#222" }}
         >
-
+          Features of Our Blog Platform
         </Typography>
 
         <Box
@@ -96,7 +96,7 @@ const Blog = () => {
         />
       </Box>
 
-      {/* Blog Cards */}
+      {/*  Cards */}
       <Box
         sx={{
           display: "grid",
@@ -146,8 +146,16 @@ const Blog = () => {
               {blog.category}
             </Box>
 
-            {/* Blog Image */}
-            <Box sx={{ mt: "auto" }}>
+            {/* Content Box */}
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: blog.imageUrl ? "flex-start" : "center",
+                flexGrow: 1,
+              }}
+            >
               {blog.imageUrl && (
                 <Box
                   component="img"
@@ -196,7 +204,6 @@ const Blog = () => {
                 {blog.content}
               </Typography>
             </Box>
-
 
             {/* Read More Button */}
             <Button

@@ -1,2 +1,2 @@
-const BASEURL = "http://localhost:3000"; 
+const BASEURL = "https://blog-server-7pgb.onrender.com"; 
 export default BASEURL;
