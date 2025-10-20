@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const Header = () => {
@@ -10,15 +10,23 @@ const Header = () => {
 
   return (
     <Box sx={{ backgroundColor: "white", color: "black" }}>
-   
+      {/* Top Bar */}
       <Box
         sx={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "flex-end",
+          justifyContent: "space-between",
           padding: "20px",
         }}
       >
+        {/* Logo */}
+        <Box component="img"
+          src="https://cdn-icons-png.flaticon.com/128/3669/3669981.png"
+          alt="Logo"
+          sx={{ height: "50px" }}
+        />
+
+        {/* Button */}
         <Button
           variant="contained"
           sx={{
@@ -26,15 +34,13 @@ const Header = () => {
             color: "white",
             "&:hover": { backgroundColor: "#333" },
           }}
-          onClick={() =>
-            isCrudPage ? navigate("/") : navigate("/crud")
-          }
+          onClick={() => (isCrudPage ? navigate("/") : navigate("/crud"))}
         >
           {isCrudPage ? "View Blogs" : "Get Started"}
         </Button>
       </Box>
 
-      
+      {/*  Text */}
       <Box sx={{ padding: "50px 20px", textAlign: "center" }}>
         <Typography variant="h2" component="h1" gutterBottom>
           {isCrudPage ? "Start Blogging" : "Inspire. Create. Share"}

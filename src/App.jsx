@@ -1,24 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Carousel from "./pages/Carousel";
-import Crud from "./pages/Crud";
 import Footer from "./components/Footer";
+import AddBlog from "./pages/AddBlog";
+import Blog from "./pages/Blog";
+import BlogDetail from "./pages/BlogDetail";
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState("");
-
   return (
     <>
-      <Header setSelectedCategory={setSelectedCategory} />
+      <Header />
       <Routes>
-        <Route path="/" element={<Carousel />} />
-        <Route
-          path="/crud"
-          element={<Crud  />}
-        />
-      </Routes>
-      <Footer/>
+        <Route path="/" element={<Blog />} />
+        <Route path="/crud" element={<AddBlog />} />
+        <Route path="/crud/:id" element={<AddBlog />} />
+        <Route path="/blog-detail" element={<BlogDetail />} />
+       </Routes>
+      <Footer />
     </>
   );
 }
