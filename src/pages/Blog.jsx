@@ -49,9 +49,8 @@ const Blog = () => {
         alt="Blog Banner"
         sx={{
           width: "100%",
-          maxWidth: "1200px",
+          maxWidth: { xs: "100%", sm: "1200px", md: "1200px" },
           height: "500px",
-          objectFit: "cover",
           borderRadius: "1px",
           mb: 4,
           display: "block",
